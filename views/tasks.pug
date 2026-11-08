@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Мій список справ (To-Do List)
+  p Загальна кількість задач: #{tasks.length}
+  ul
+    each task in tasks
+      if task.completed
+        li(class='done') #{task.title}
+          span(class='badge') Виконано
+      else
+        li #{task.title}
